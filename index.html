@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odisha Dhamaka – Cloud Kitchen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-icon">🍛</span>
+        <div>
+          <span class="logo-name">Odisha Dhamaka</span>
+          <span class="logo-tag">Cloud Kitchen</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="order-btn" onclick="scrollToMenu()">Order Now</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-badge">Authentic Odia Cuisine</span>
+      <h1>The Taste of <br /><span class="highlight">Odisha</span>, Delivered Hot</h1>
+      <p>Handcrafted recipes passed down through generations — now at your doorstep. No preservatives, just pure Odia love.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="scrollToMenu()">Explore Menu</button>
+        <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Our Story</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2000+</span><span class="stat-label">Happy Customers</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Odia Dishes</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Avg Rating</span></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="dish-card floating">
+        <div class="dish-emoji">🍲</div>
+        <div class="dish-info">
+          <strong>Dalma</strong>
+          <span>Classic Odia Dal</span>
+        </div>
+      </div>
+      <div class="big-bowl">🥘</div>
+      <div class="dish-card floating delay">
+        <div class="dish-emoji">🍮</div>
+        <div class="dish-info">
+          <strong>Rasagola</strong>
+          <span>Fresh & Soft</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Browse by Category</h2>
+      <div class="cat-grid" id="catGrid">
+        <button class="cat-btn active" data-cat="all">All</button>
+        <button class="cat-btn" data-cat="rice">Rice & Dal</button>
+        <button class="cat-btn" data-cat="curry">Curries</button>
+        <button class="cat-btn" data-cat="snacks">Snacks</button>
+        <button class="cat-btn" data-cat="sweets">Sweets</button>
+        <button class="cat-btn" data-cat="thali">Thali</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <p class="section-sub">— Our Specialities —</p>
+      <h2 class="section-title">Today's Menu</h2>
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container about-inner">
+      <div class="about-img-wrap">
+        <div class="about-blob">
+          <div class="about-emoji-grid">
+            <span>🍛</span><span>🥘</span><span>🍮</span><span>🌿</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-sub">— Our Story —</p>
+        <h2 class="section-title left">Born in Puri, <br />Made for You</h2>
+        <p>Odisha Dhamaka started in a home kitchen in Bhubaneswar with one mission — serve the warmth of Odia home cooking to people far from home.</p>
+        <p>Every dish is prepared fresh with locally sourced ingredients, following recipes handed down from grandmothers in the lanes of Puri and Cuttack.</p>
+        <ul class="about-list">
+          <li>✅ No artificial colours or preservatives</li>
+          <li>✅ Freshly cooked every day by order</li>
+          <li>✅ Hygienically packed, delivered within 45 mins</li>
+          <li>✅ 100% vegetarian kitchen available on request</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <p class="section-sub">— What Customers Say —</p>
+      <h2 class="section-title">Real Reviews</h2>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"The Dalma and Pakhala combo took me straight back to my nani's house in Cuttack. Absolutely divine!"</p>
+          <div class="reviewer"><span class="avatar">P</span><div><strong>Priya Mohanty</strong><small>Bhubaneswar</small></div></div>
+        </div>
+        <div class="review-card featured">
+          <div class="stars">★★★★★</div>
+          <p>"Ordered the Odia Thali for a family gathering and everyone was blown away. Packaging was neat, food arrived hot!"</p>
+          <div class="reviewer"><span class="avatar">S</span><div><strong>Saurav Das</strong><small>Bengaluru (Odia in exile 😄)</small></div></div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p>"Best Chenna Poda I've had outside Odisha. The Chhena Jhili was also outstanding. Will order every week!"</p>
+          <div class="reviewer"><span class="avatar">A</span><div><strong>Anita Patra</strong><small>Hyderabad</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-info">
+        <p class="section-sub">— Reach Us —</p>
+        <h2 class="section-title left">Order or <br />Get in Touch</h2>
+        <div class="info-items">
+          <div class="info-item"><span>📍</span><div><strong>Location</strong><span>Patia, Bhubaneswar – 751024</span></div></div>
+          <div class="info-item"><span>📞</span><div><strong>Phone / WhatsApp</strong><span>+91 98765 43210</span></div></div>
+          <div class="info-item"><span>🕐</span><div><strong>Hours</strong><span>Mon–Sun: 10 AM – 10 PM</span></div></div>
+          <div class="info-item"><span>🚴</span><div><strong>Delivery</strong><span>Free above ₹299 within 5 km</span></div></div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" onsubmit="handleOrder(event)">
+        <h3>Place Your Order</h3>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="name" placeholder="Saurav Kumar" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 98765 43210" required />
+        </div>
+        <div class="form-group">
+          <label>Delivery Address</label>
+          <textarea id="address" rows="2" placeholder="Flat 3B, Saheed Nagar..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Your Order</label>
+          <textarea id="order" rows="3" placeholder="1x Odia Thali, 2x Rasagola..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">Send Order via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span>🍛</span>
+        <div>
+          <strong>Odisha Dhamaka</strong>
+          <small>Cloud Kitchen</small>
+        </div>
+      </div>
+      <p class="footer-copy">Made with ❤️ for every Odia heart — © 2025 Odisha Dhamaka</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART TOAST -->
+  <div class="cart-toast" id="cartToast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
