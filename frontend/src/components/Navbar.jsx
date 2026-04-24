@@ -22,6 +22,7 @@ export default function Navbar() {
             <li><NavLink to="/menu" onClick={() => setMenuOpen(false)}>Menu</NavLink></li>
             <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
             <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
+            <li><NavLink to="/whatsapp-order" onClick={() => setMenuOpen(false)} className="wa-nav-link">💬 WhatsApp</NavLink></li>
             <li><NavLink to="/admin/orders" onClick={() => setMenuOpen(false)}>Admin</NavLink></li>
           </ul>
 

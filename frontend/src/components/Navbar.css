@@ -48,6 +48,9 @@
   color: var(--terracotta);
 }
 
+.wa-nav-link { color: #25D366 !important; font-weight: 700 !important; }
+.wa-nav-link:hover { color: #1da851 !important; }
+
 .nav-actions {
   display: flex;
   align-items: center;

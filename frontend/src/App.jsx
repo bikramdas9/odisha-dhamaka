@@ -9,6 +9,7 @@ import OrderSuccess from "./pages/OrderSuccess";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdminOrders from "./pages/AdminOrders";
+import WhatsAppOrder from "./pages/WhatsAppOrder";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin/orders" element={<AdminOrders />} />
+          <Route path="/whatsapp-order" element={<WhatsAppOrder />} />
         </Routes>
         <Footer />
       </CartProvider>

@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .database import connect_db, close_db
 from .seed import seed_menu
-from .routers import menu, orders, contact
+from .routers import menu, orders, contact, whatsapp, qr
 from .config import settings
 
 
@@ -29,6 +29,8 @@ app.add_middleware(
 app.include_router(menu.router)
 app.include_router(orders.router)
 app.include_router(contact.router)
+app.include_router(whatsapp.router)
+app.include_router(qr.router)
 
 
 @app.get("/api/health")
