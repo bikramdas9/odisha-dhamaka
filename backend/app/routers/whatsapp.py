@@ -69,10 +69,18 @@ async def whatsapp_webhook(request: Request, db=Depends(get_db)):
 
     reply = await handle_message(db, phone, incoming, msg_lower, step, session)
 
-    # Twilio expects TwiML XML response
+    # Escape XML special characters so TwiML is always valid
+    safe_reply = (
+        reply
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
     twiml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Message>{reply}</Message>
+    <Message>{safe_reply}</Message>
 </Response>"""
     return Response(content=twiml, media_type="application/xml")
 
