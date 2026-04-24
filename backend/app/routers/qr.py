@@ -1,18 +1,20 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from ..config import settings
-import qrcode
 import io
 
 router = APIRouter(prefix="/api/qr", tags=["qr"])
 
-# Twilio sandbox join link — customers send "join <word>" once, then chat freely
 SANDBOX_NUMBER = settings.twilio_whatsapp_from.replace("whatsapp:", "")
 
 
 @router.get("/whatsapp")
 async def get_whatsapp_qr():
-    """Returns a QR code PNG that opens WhatsApp chat with the bot."""
+    try:
+        import qrcode
+    except ImportError:
+        raise HTTPException(500, "qrcode package not installed")
+
     wa_url = f"https://wa.me/{SANDBOX_NUMBER.lstrip('+').replace(' ', '')}?text=menu"
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
     qr.add_data(wa_url)

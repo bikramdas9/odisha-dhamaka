@@ -7,6 +7,13 @@ from datetime import datetime, timezone
 
 router = APIRouter(prefix="/api/whatsapp", tags=["whatsapp"])
 
+
+@router.get("/webhook")
+async def webhook_check():
+    """Health check — confirms the webhook route is reachable."""
+    return {"status": "ok", "message": "WhatsApp webhook is live"}
+
+
 # ── Menu helpers ──────────────────────────────────────────────────────────────
 
 def menu_text():
